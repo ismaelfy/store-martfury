@@ -1,0 +1,18 @@
+$primary: #4285f4;
+$success: #20c997;
+$warning: #fcb800;
+$blue: #4b7bec;
+$danger: #ff818d;
+$secondary: #6c757d;
+$dark: #343a40;
+$grey: #6c757d;
+$info: #33b5e5;
+$light:#f8f9fa;
+$white :#fff;
+$red:rgb(255, 67, 67);
+$colors : "primary" $primary, "success" $success, "warning" $warning, "blue" $blue, "danger" $danger, "secondary" $secondary, "dark" $dark, "grey" $grey, "info" $info, "light" $light;
+$size-sm: 575.98px;
+$size-md: 767.98px;
+//@each $name, $color in $colors {
+//    $name:$color;
+//}

@@ -1,0 +1,329 @@
+@import 'colors';
+body {
+    margin: 0 auto;
+    background: #f5f5f5;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+/*style containers*/
+
+.modal {
+    display: none;
+}
+body.open-modal {
+    .modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s ease;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: rgba($dark, 0.3);
+        z-index: 2000;
+        .modal-content {
+            position: relative;
+            display: block;
+            width: 80%;
+            min-height: 10%;
+            height: 70vh;
+            max-width: 1000px;
+            max-height: 500px;
+            background: white;
+            /*border-radius: 8px;*/
+            box-shadow: 0 3px 8px 0px rgba(108, 117, 125, 0.3), 2px 3px 3px rgba(108, 117, 125, 0.2);
+            padding: 1rem;
+            button {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                border: 0;
+                background: transparent;
+                cursor: pointer;
+                i {
+                    font-size: 1.3rem;
+                    color: #5a5a5a;
+                }
+            }
+        }
+    }
+}
+.grid {
+    .icon {
+        font-size: 2rem;
+        color: $warning;
+    }
+    strong {
+        font-size: 1.4rem;
+    }
+    p {
+        margin: 0;
+    }
+}
+.border {
+    border: 1px solid rgba($grey, 0.4);
+}
+.container-flud {
+    width: 100%;
+    padding: 2rem;
+    .grid {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+@mixin button-shadow ($color) {
+    box-shadow: 2px 5px 10px rgba($color, 0.2);
+}
+@mixin button-shadow-hover ($color) {
+    box-shadow: 0 3px 8px 0px rgba($color, 0.3), 2px 3px 3px rgba($color, 0.3);
+}
+ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+hr {
+    display: block;
+    margin: 0.5rem 0rem;
+    border: .1px solid #efefef;
+}
+.button {
+    display: inline-block;
+    padding: 6px 20px;
+    margin: 5px;
+    color: $dark;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 4px;
+    background: $light;
+    @include button-shadow($grey);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    text-align: center;
+    &:hover {
+        box-shadow: 2px 5px 10px rgba($grey, 0.3);
+    }
+    &.round {
+        border-radius: 36px;
+        padding: 6px 26px;
+    }
+}
+@each $name, $color in $colors {
+    .bg-#{$name} {
+        background: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .button.#{$name} {
+        background: $color;
+        @include button-shadow($color);
+        color: white;
+        &:hover {
+            @include button-shadow-hover($color);
+        }
+    }
+}
+.text-white {
+    color: white;
+}
+.btn-sm {
+    padding: 4px 10px;
+    font-size: 14px;
+}
+.d-block {
+    display: block;
+}
+.select, .input {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.lowercase {
+    text-transform: lowercase;
+}
+.center {
+    text-align: center;
+    justify-content: center;
+}
+.left {
+    text-align: left;
+    justify-content: flex-start;
+}
+.right {
+    text-align: right;
+    justify-content: flex-end;
+}
+/*css grid*/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 15px;
+}
+$gridSize: 12;
+@for $i from 1 through $gridSize {
+    .grid-#{$i} {
+        grid-column: span ($i);
+    }
+}
+@media only screen and (min-width: 576px) {
+    @for $i from 1 through $gridSize {
+        .grid-sm-#{$i} {
+            grid-column: span ($i);
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    @for $i from 1 through $gridSize {
+        .grid-md-#{$i} {
+            grid-column: span ($i);
+        }
+    }
+}
+@media (min-width: 992px) {
+    @for $i from 1 through $gridSize {
+        .grid-lg-#{$i} {
+            grid-column: span ($i);
+        }
+    }
+}
+@media (min-width: 1200px) {
+    @for $i from 1 through $gridSize {
+        .grid-xl-#{$i} {
+            grid-column: span ($i);
+        }
+    }
+}
+$spacin :0.25rem;
+$spacinSize:5;
+@for $i from 1 through $spacinSize {
+    @if $i>=3 {
+        $spacin: 0.6rem;
+    }
+    .p-#{$i} {
+        padding: $spacin * $i;
+    }
+    .pt-#{$i}, .py-#{$i} {
+        padding-top: $spacin * $i;
+    }
+    .pb-#{$i}, .py-#{$i} {
+        padding-bottom: $spacin * $i;
+    }
+    .pr-#{$i}, .px-#{$i} {
+        padding-right: $spacin * $i;
+    }
+    .pl-#{$i}, .px-#{$i} {
+        padding-left: $spacin * $i;
+    }
+}
+@media (min-width: 576px) {
+    @for $i from 1 through $spacinSize {
+        .p-sm-#{$i} {
+            padding: $spacin * $i;
+        }
+        .pt-sm-#{$i}, .py-sm-#{$i} {
+            padding-top: $spacin * $i;
+        }
+        .pb-sm-#{$i}, .py-sm-#{$i} {
+            padding-bottom: $spacin * $i;
+        }
+        .pr-sm-#{$i}, .px-sm-#{$i} {
+            padding-right: $spacin * $i;
+        }
+        .pl-sm-#{$i}, .px-sm-#{$i} {
+            padding-left: $spacin * $i;
+        }
+    }
+}
+/*style margin*/
+
+.m-0 {
+    margin: 0;
+}
+@for $i from 1 through $spacinSize {
+    .m-#{$i} {
+        margin: $spacin * $i;
+    }
+    .mt-#{$i}, .my-#{$i} {
+        margin-top: $spacin * $i;
+    }
+    .mb-#{$i}, .my-#{$i} {
+        margin-bottom: $spacin * $i;
+    }
+    .mr-#{$i}, .mx-#{$i} {
+        margin-right: $spacin * $i;
+    }
+    .ml-#{$i}, .mx-#{$i} {
+        margin-left: $spacin * $i;
+    }
+}
+@media (min-width: 576px) {
+    @for $i from 1 through $spacinSize {
+        .m-sm-#{$i} {
+            margin: $spacin * $i;
+        }
+        .mt-sm-#{$i}, .my-sm-#{$i} {
+            margin-top: $spacin * $i;
+        }
+        .mb-sm-#{$i}, .my-sm-#{$i} {
+            margin-bottom: $spacin * $i;
+        }
+        .mr-sm-#{$i}, .mx-sm-#{$i} {
+            margin-right: $spacin * $i;
+        }
+        .ml-sm-#{$i}, .mx-sm-#{$i} {
+            margin-left: $spacin * $i;
+        }
+    }
+}
+/*custom style radio & checkbox*/
+
+.custom-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    label {
+        font-family: 'Font Awesome 5 Free';
+    }
+    label:before {
+        content: "\f14a";
+        color: white;
+        background: red;
+        padding: 5px;
+    }
+}

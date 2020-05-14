@@ -1,0 +1,103 @@
+@import 'colors';
+/* style navbar */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1rem;
+    height: 4vh;
+    background: $warning;
+    padding: 1.5rem 2rem;
+    border-top: .8px solid rgba($dark, 0.2);
+    ul {
+        display: flex;
+        li {
+            padding: 0 1rem;
+            a {
+                text-decoration: none;
+                color: $dark;
+                font-size: 1.2rem;
+                font-weight: 300;
+                transition: all .1s ease;
+                &:hover {
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .search {
+        width: 50%;
+        .form {
+            display: flex;
+            background: $white;
+            border-radius: 4px;
+            overflow: hidden;
+            input, button, select {
+                background: transparent;
+                border: 0px;
+                border-radius: 0px;
+                cursor: pointer;
+                outline: none;
+            }
+            select {
+                width: auto;
+                border-right: .5px solid rgba($grey, 0.7);
+                padding-right: .3rem;
+            }
+            input {
+                cursor: initial;
+            }
+            button {
+                padding: 0 1.5rem;
+                background: $dark;
+                color: $white;
+            }
+        }
+    }
+}
+/*style bottom navigation*/
+
+.bottom-nav {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    border-top: 1px solid rgba($grey, 0.2);
+    padding: .8rem 0;
+    ul {
+        display: flex;
+        li {
+            line-height: 1rem;
+            width: calc(100% / 4);
+            text-align: center;
+            span, a {
+                display: block;
+                cursor: pointer;
+            }
+            a {
+                text-decoration: none;
+                color: $dark;
+                transition: all .5s ease;
+                &:hover {
+                    color: $warning;
+                }
+            }
+        }
+    }
+}
+// midium size
+@media screen and (max-width: $size-md) {
+    .navbar {
+        display: none;
+    }
+}
+// small size
+@media screen and (max-width: $size-sm) {
+    .bottom-nav {
+        display: block;
+    }
+}
