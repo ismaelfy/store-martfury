@@ -1,5 +1,6 @@
 <?php 
   require 'include/functions.php';
+  
   display_link('Chiry Store - Home');
 ?>
   <main>
@@ -45,6 +46,14 @@
       </section>
 
       <?php display_newproducts();?>
+
+    <section class="product-brand">
+      <div class="container-brand-products">
+        <div class="row">
+          
+        </div>
+      </div>    
+    </section>
   </main>
   <script src="<?=URL_BASE?>assets/js/carousel.js"> </script>
  <?php display_sccripts();?>

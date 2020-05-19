@@ -1,9 +1,9 @@
 @import 'colors';
 body {
     margin: 0 auto;
-    background: #f5f5f5;
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
     margin-bottom: .5rem;
     font-weight: 500;
     line-height: 1.2;
@@ -69,6 +69,13 @@ body.open-modal {
         margin: 0;
     }
 }
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.pointer {
+    cursor: pointer;
+}
 .border {
     border: 1px solid rgba($grey, 0.4);
 }
@@ -80,8 +87,18 @@ body.open-modal {
         margin: 0 auto;
     }
 }
-input[type=number]::-webkit-inner-spin-button {
+input.number[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+input {
+    outline: none;
+    &.round {
+        border-radius: 36px;
+        overflow: hidden;
+    }
+    &:focus {
+        border: 1.5px solid rgba($primary, 0.5);
+    }
 }
 @mixin button-shadow ($color) {
     box-shadow: 2px 5px 10px rgba($color, 0.2);
@@ -145,10 +162,7 @@ hr {
     padding: 4px 10px;
     font-size: 14px;
 }
-.d-block {
-    display: block;
-}
-.select, .input {
+.select, .input, .form-control {
     display: block;
     width: 100%;
     height: calc(1.5em + .75rem + 2px);
@@ -222,108 +236,139 @@ $gridSize: 12;
         }
     }
 }
-$spacin :0.25rem;
-$spacinSize:5;
-@for $i from 1 through $spacinSize {
-    @if $i>=3 {
-        $spacin: 0.6rem;
-    }
-    .p-#{$i} {
-        padding: $spacin * $i;
-    }
-    .pt-#{$i}, .py-#{$i} {
-        padding-top: $spacin * $i;
-    }
-    .pb-#{$i}, .py-#{$i} {
-        padding-bottom: $spacin * $i;
-    }
-    .pr-#{$i}, .px-#{$i} {
-        padding-right: $spacin * $i;
-    }
-    .pl-#{$i}, .px-#{$i} {
-        padding-left: $spacin * $i;
-    }
-}
-@media (min-width: 576px) {
-    @for $i from 1 through $spacinSize {
-        .p-sm-#{$i} {
-            padding: $spacin * $i;
-        }
-        .pt-sm-#{$i}, .py-sm-#{$i} {
-            padding-top: $spacin * $i;
-        }
-        .pb-sm-#{$i}, .py-sm-#{$i} {
-            padding-bottom: $spacin * $i;
-        }
-        .pr-sm-#{$i}, .px-sm-#{$i} {
-            padding-right: $spacin * $i;
-        }
-        .pl-sm-#{$i}, .px-sm-#{$i} {
-            padding-left: $spacin * $i;
-        }
-    }
-}
-/*style margin*/
-
-.m-0 {
-    margin: 0;
-}
-@for $i from 1 through $spacinSize {
-    .m-#{$i} {
-        margin: $spacin * $i;
-    }
-    .mt-#{$i}, .my-#{$i} {
-        margin-top: $spacin * $i;
-    }
-    .mb-#{$i}, .my-#{$i} {
-        margin-bottom: $spacin * $i;
-    }
-    .mr-#{$i}, .mx-#{$i} {
-        margin-right: $spacin * $i;
-    }
-    .ml-#{$i}, .mx-#{$i} {
-        margin-left: $spacin * $i;
-    }
-}
-@media (min-width: 576px) {
-    @for $i from 1 through $spacinSize {
-        .m-sm-#{$i} {
-            margin: $spacin * $i;
-        }
-        .mt-sm-#{$i}, .my-sm-#{$i} {
-            margin-top: $spacin * $i;
-        }
-        .mb-sm-#{$i}, .my-sm-#{$i} {
-            margin-bottom: $spacin * $i;
-        }
-        .mr-sm-#{$i}, .mx-sm-#{$i} {
-            margin-right: $spacin * $i;
-        }
-        .ml-sm-#{$i}, .mx-sm-#{$i} {
-            margin-left: $spacin * $i;
-        }
-    }
-}
 /*custom style radio & checkbox*/
 
 .custom-checkbox {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    margin: .3rem 0;
     user-select: none;
     label {
-        font-family: 'Font Awesome 5 Free';
+        position: relative;
+        display: block;
+        margin-left: 1.5rem;
+        &:before {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            display: block;
+            content: "";
+            left: -1.5rem;
+            top: 0;
+            background: rgba($dark, 0.2);
+            color: white;
+            padding: .5rem;
+            border-radius: 4px;
+            font-size: 13px;
+        }
     }
-    label:before {
-        content: "\f14a";
-        color: white;
-        background: red;
-        padding: 5px;
+    input {
+        display: none;
+        &:hover {
+            background: rgba(#9faab7, 0.6);
+        }
+        &:checked~label {
+            &:before {
+                content: "\2713";
+                background: $primary;
+                color: white;
+                padding: 0 5px;
+            }
+            &:after {
+                background: $primary;
+            }
+        }
+        &.radio {
+            border-radius: 50%;
+        }
+        &:after {
+            border-radius: 50%;
+        }
+    }
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(251, 244, 244, 0.25);
+    border-radius: 16px;
+}
+::-webkit-scrollbar-thumb {
+    background: #afafaf;
+}
+/*custom table style*/
+
+.content {
+    padding: 1rem;
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #212529;
+        td, th {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+        }
+        tr:hover {
+            background-color: rgba($grey, 0.04);
+        }
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+        }
+        td {
+            &.img {
+                max-width: 60px;
+            }
+            &.quantity {
+                text-align: center;
+                input {
+                    max-width: 70px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .cart-totals, .checkout-totals {
+        border: 6px solid #ebebeb;
+        padding: 1rem;
+        h2 {
+            padding-bottom: .3rem;
+            border-bottom: 2px solid rgba(grey, 0.5);
+            display: block;
+        }
+        table td {
+            &.border-0 {
+                border: 0;
+            }
+            &:nth-child(2) {
+                text-align: right;
+            }
+        }
+    }
+    .checkout-details h2, .cart-totals h2, .checkout-totals h2 {
+        font-weight: 600;
+    }
+}
+/*style checkout-details  */
+
+#checkout {
+    input#login {
+        display: none;
+        &~.form-singin {
+            display: none;
+            transition: all .5s ease;
+        }
+        &~.form-biling .custom-checkbox {
+            display: block;
+        }
+        &:checked {
+            &~.form-singin {
+                display: block;
+            }
+            &~.form-biling .custom-checkbox {
+                display: none;
+            }
+        }
     }
 }

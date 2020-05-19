@@ -26,7 +26,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="<?=URL_BASE?>cart">
 					<i class="fas fa-shopping-bag"></i>
 				</a>
 			</li>

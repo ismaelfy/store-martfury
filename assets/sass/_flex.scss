@@ -47,14 +47,14 @@ $columns :12;
 .col-6 {
     flex-basis: 50%;
 }
-@media (max-width: 575.92px){
+@media (max-width: 575.92px) {
     .row {
         padding: 0;
     }
     @for $width from 1 through $columns {
         .col-sm-#{$width}, .col-md-#{$width}, .col-lg-#{$width}, .col-xl-#{$width} {
             flex-basis: 80%;
-            margin:0 auto;
+            margin: 0 auto;
         }
     }
 }
@@ -87,6 +87,127 @@ $columns :12;
     @for $width from 1 through $columns {
         .col-xl-#{$width} {
             flex-basis: $width / $columns * 100%;
+        }
+    }
+}
+.d-block {
+    display: block;
+}
+.d-flex {
+    display: flex;
+}
+.d-inline-flex {
+    display: inline-flex;
+}
+.d-inline-block {
+    display: inline-block;
+}
+.d-none {
+    display: none;
+}
+.justify-content-start {
+    justify-content: flex-start;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.justify-content-around {
+    justify-content: space-around;
+}
+.justify-content-end {
+    justify-content: flex-end;
+}
+.align-items-center {
+    align-items: center;
+}
+.align-items-start {
+    justify-content: flex-start;
+}
+.align-items-end {
+    justify-content: flex-end;
+}
+/*spacing margin & padding */
+
+$spacin :0.25rem;
+$spacinSize:5;
+
+@for $i from 0 through $spacinSize {
+    @if $i>=3 {
+        $spacin: 0.6rem;
+    }
+    .p-#{$i} {
+        padding: $spacin * $i;
+    }
+    .pt-#{$i}, .py-#{$i} {
+        padding-top: $spacin * $i;
+    }
+    .pb-#{$i}, .py-#{$i} {
+        padding-bottom: $spacin * $i;
+    }
+    .pr-#{$i}, .px-#{$i} {
+        padding-right: $spacin * $i;
+    }
+    .pl-#{$i}, .px-#{$i} {
+        padding-left: $spacin * $i;
+    }
+}
+@media (min-width: 576px) {
+    @for $i from 1 through $spacinSize {
+        .p-sm-#{$i} {
+            padding: $spacin * $i;
+        }
+        .pt-sm-#{$i}, .py-sm-#{$i} {
+            padding-top: $spacin * $i;
+        }
+        .pb-sm-#{$i}, .py-sm-#{$i} {
+            padding-bottom: $spacin * $i;
+        }
+        .pr-sm-#{$i}, .px-sm-#{$i} {
+            padding-right: $spacin * $i;
+        }
+        .pl-sm-#{$i}, .px-sm-#{$i} {
+            padding-left: $spacin * $i;
+        }
+    }
+}
+/*style margin*/
+
+@for $i from 0 through $spacinSize {
+    .m-#{$i} {
+        margin: $spacin * $i;
+    }
+    .mt-#{$i}, .my-#{$i} {
+        margin-top: $spacin * $i;
+    }
+    .mb-#{$i}, .my-#{$i} {
+        margin-bottom: $spacin * $i;
+    }
+    .mr-#{$i}, .mx-#{$i} {
+        margin-right: $spacin * $i;
+    }
+    .ml-#{$i}, .mx-#{$i} {
+        margin-left: $spacin * $i;
+    }
+}
+@media (min-width: 576px) {
+    @for $i from 1 through $spacinSize {
+        .m-sm-#{$i} {
+            margin: $spacin * $i;
+        }
+        .mt-sm-#{$i}, .my-sm-#{$i} {
+            margin-top: $spacin * $i;
+        }
+        .mb-sm-#{$i}, .my-sm-#{$i} {
+            margin-bottom: $spacin * $i;
+        }
+        .mr-sm-#{$i}, .mx-sm-#{$i} {
+            margin-right: $spacin * $i;
+        }
+        .ml-sm-#{$i}, .mx-sm-#{$i} {
+            margin-left: $spacin * $i;
         }
     }
 }

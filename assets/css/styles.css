@@ -12,10 +12,10 @@ body {
 
 body {
   margin: 0 auto;
-  background: #f5f5f5;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
@@ -81,6 +81,15 @@ body.open-modal .modal .modal-content button i {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 .border {
   border: 1px solid rgba(108, 117, 125, 0.4);
 }
@@ -94,8 +103,19 @@ body.open-modal .modal .modal-content button i {
   margin: 0 auto;
 }
 
-input[type=number]::-webkit-inner-spin-button {
+input.number[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+input {
+  outline: none;
+}
+input.round {
+  border-radius: 36px;
+  overflow: hidden;
+}
+input:focus {
+  border: 1.5px solid rgba(66, 133, 244, 0.5);
 }
 
 ul {
@@ -313,11 +333,7 @@ hr {
   font-size: 14px;
 }
 
-.d-block {
-  display: block;
-}
-
-.select, .input {
+.select, .input, .form-control {
   display: block;
   width: 100%;
   height: calc(1.5em + .75rem + 2px);
@@ -607,437 +623,136 @@ hr {
     grid-column: span 12;
   }
 }
-.p-1 {
-  padding: 0.25rem;
-}
-
-.pt-1, .py-1 {
-  padding-top: 0.25rem;
-}
-
-.pb-1, .py-1 {
-  padding-bottom: 0.25rem;
-}
-
-.pr-1, .px-1 {
-  padding-right: 0.25rem;
-}
-
-.pl-1, .px-1 {
-  padding-left: 0.25rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
-.pt-2, .py-2 {
-  padding-top: 0.5rem;
-}
-
-.pb-2, .py-2 {
-  padding-bottom: 0.5rem;
-}
-
-.pr-2, .px-2 {
-  padding-right: 0.5rem;
-}
-
-.pl-2, .px-2 {
-  padding-left: 0.5rem;
-}
-
-.p-3 {
-  padding: 1.8rem;
-}
-
-.pt-3, .py-3 {
-  padding-top: 1.8rem;
-}
-
-.pb-3, .py-3 {
-  padding-bottom: 1.8rem;
-}
-
-.pr-3, .px-3 {
-  padding-right: 1.8rem;
-}
-
-.pl-3, .px-3 {
-  padding-left: 1.8rem;
-}
-
-.p-4 {
-  padding: 2.4rem;
-}
-
-.pt-4, .py-4 {
-  padding-top: 2.4rem;
-}
-
-.pb-4, .py-4 {
-  padding-bottom: 2.4rem;
-}
-
-.pr-4, .px-4 {
-  padding-right: 2.4rem;
-}
-
-.pl-4, .px-4 {
-  padding-left: 2.4rem;
-}
-
-.p-5 {
-  padding: 3rem;
-}
-
-.pt-5, .py-5 {
-  padding-top: 3rem;
-}
-
-.pb-5, .py-5 {
-  padding-bottom: 3rem;
-}
-
-.pr-5, .px-5 {
-  padding-right: 3rem;
-}
-
-.pl-5, .px-5 {
-  padding-left: 3rem;
-}
-
-@media (min-width: 576px) {
-  .p-sm-1 {
-    padding: 0.6rem;
-  }
-
-  .pt-sm-1, .py-sm-1 {
-    padding-top: 0.6rem;
-  }
-
-  .pb-sm-1, .py-sm-1 {
-    padding-bottom: 0.6rem;
-  }
-
-  .pr-sm-1, .px-sm-1 {
-    padding-right: 0.6rem;
-  }
-
-  .pl-sm-1, .px-sm-1 {
-    padding-left: 0.6rem;
-  }
-
-  .p-sm-2 {
-    padding: 1.2rem;
-  }
-
-  .pt-sm-2, .py-sm-2 {
-    padding-top: 1.2rem;
-  }
-
-  .pb-sm-2, .py-sm-2 {
-    padding-bottom: 1.2rem;
-  }
-
-  .pr-sm-2, .px-sm-2 {
-    padding-right: 1.2rem;
-  }
-
-  .pl-sm-2, .px-sm-2 {
-    padding-left: 1.2rem;
-  }
-
-  .p-sm-3 {
-    padding: 1.8rem;
-  }
-
-  .pt-sm-3, .py-sm-3 {
-    padding-top: 1.8rem;
-  }
-
-  .pb-sm-3, .py-sm-3 {
-    padding-bottom: 1.8rem;
-  }
-
-  .pr-sm-3, .px-sm-3 {
-    padding-right: 1.8rem;
-  }
-
-  .pl-sm-3, .px-sm-3 {
-    padding-left: 1.8rem;
-  }
-
-  .p-sm-4 {
-    padding: 2.4rem;
-  }
-
-  .pt-sm-4, .py-sm-4 {
-    padding-top: 2.4rem;
-  }
-
-  .pb-sm-4, .py-sm-4 {
-    padding-bottom: 2.4rem;
-  }
-
-  .pr-sm-4, .px-sm-4 {
-    padding-right: 2.4rem;
-  }
-
-  .pl-sm-4, .px-sm-4 {
-    padding-left: 2.4rem;
-  }
-
-  .p-sm-5 {
-    padding: 3rem;
-  }
-
-  .pt-sm-5, .py-sm-5 {
-    padding-top: 3rem;
-  }
-
-  .pb-sm-5, .py-sm-5 {
-    padding-bottom: 3rem;
-  }
-
-  .pr-sm-5, .px-sm-5 {
-    padding-right: 3rem;
-  }
-
-  .pl-sm-5, .px-sm-5 {
-    padding-left: 3rem;
-  }
-}
-/*style margin*/
-.m-0 {
-  margin: 0;
-}
-
-.m-1 {
-  margin: 0.6rem;
-}
-
-.mt-1, .my-1 {
-  margin-top: 0.6rem;
-}
-
-.mb-1, .my-1 {
-  margin-bottom: 0.6rem;
-}
-
-.mr-1, .mx-1 {
-  margin-right: 0.6rem;
-}
-
-.ml-1, .mx-1 {
-  margin-left: 0.6rem;
-}
-
-.m-2 {
-  margin: 1.2rem;
-}
-
-.mt-2, .my-2 {
-  margin-top: 1.2rem;
-}
-
-.mb-2, .my-2 {
-  margin-bottom: 1.2rem;
-}
-
-.mr-2, .mx-2 {
-  margin-right: 1.2rem;
-}
-
-.ml-2, .mx-2 {
-  margin-left: 1.2rem;
-}
-
-.m-3 {
-  margin: 1.8rem;
-}
-
-.mt-3, .my-3 {
-  margin-top: 1.8rem;
-}
-
-.mb-3, .my-3 {
-  margin-bottom: 1.8rem;
-}
-
-.mr-3, .mx-3 {
-  margin-right: 1.8rem;
-}
-
-.ml-3, .mx-3 {
-  margin-left: 1.8rem;
-}
-
-.m-4 {
-  margin: 2.4rem;
-}
-
-.mt-4, .my-4 {
-  margin-top: 2.4rem;
-}
-
-.mb-4, .my-4 {
-  margin-bottom: 2.4rem;
-}
-
-.mr-4, .mx-4 {
-  margin-right: 2.4rem;
-}
-
-.ml-4, .mx-4 {
-  margin-left: 2.4rem;
-}
-
-.m-5 {
-  margin: 3rem;
-}
-
-.mt-5, .my-5 {
-  margin-top: 3rem;
-}
-
-.mb-5, .my-5 {
-  margin-bottom: 3rem;
-}
-
-.mr-5, .mx-5 {
-  margin-right: 3rem;
-}
-
-.ml-5, .mx-5 {
-  margin-left: 3rem;
-}
-
-@media (min-width: 576px) {
-  .m-sm-1 {
-    margin: 0.6rem;
-  }
-
-  .mt-sm-1, .my-sm-1 {
-    margin-top: 0.6rem;
-  }
-
-  .mb-sm-1, .my-sm-1 {
-    margin-bottom: 0.6rem;
-  }
-
-  .mr-sm-1, .mx-sm-1 {
-    margin-right: 0.6rem;
-  }
-
-  .ml-sm-1, .mx-sm-1 {
-    margin-left: 0.6rem;
-  }
-
-  .m-sm-2 {
-    margin: 1.2rem;
-  }
-
-  .mt-sm-2, .my-sm-2 {
-    margin-top: 1.2rem;
-  }
-
-  .mb-sm-2, .my-sm-2 {
-    margin-bottom: 1.2rem;
-  }
-
-  .mr-sm-2, .mx-sm-2 {
-    margin-right: 1.2rem;
-  }
-
-  .ml-sm-2, .mx-sm-2 {
-    margin-left: 1.2rem;
-  }
-
-  .m-sm-3 {
-    margin: 1.8rem;
-  }
-
-  .mt-sm-3, .my-sm-3 {
-    margin-top: 1.8rem;
-  }
-
-  .mb-sm-3, .my-sm-3 {
-    margin-bottom: 1.8rem;
-  }
-
-  .mr-sm-3, .mx-sm-3 {
-    margin-right: 1.8rem;
-  }
-
-  .ml-sm-3, .mx-sm-3 {
-    margin-left: 1.8rem;
-  }
-
-  .m-sm-4 {
-    margin: 2.4rem;
-  }
-
-  .mt-sm-4, .my-sm-4 {
-    margin-top: 2.4rem;
-  }
-
-  .mb-sm-4, .my-sm-4 {
-    margin-bottom: 2.4rem;
-  }
-
-  .mr-sm-4, .mx-sm-4 {
-    margin-right: 2.4rem;
-  }
-
-  .ml-sm-4, .mx-sm-4 {
-    margin-left: 2.4rem;
-  }
-
-  .m-sm-5 {
-    margin: 3rem;
-  }
-
-  .mt-sm-5, .my-sm-5 {
-    margin-top: 3rem;
-  }
-
-  .mb-sm-5, .my-sm-5 {
-    margin-bottom: 3rem;
-  }
-
-  .mr-sm-5, .mx-sm-5 {
-    margin-right: 3rem;
-  }
-
-  .ml-sm-5, .mx-sm-5 {
-    margin-left: 3rem;
-  }
-}
 /*custom style radio & checkbox*/
 .custom-checkbox {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  margin: 0.3rem 0;
   user-select: none;
 }
 .custom-checkbox label {
-  font-family: "Font Awesome 5 Free";
+  position: relative;
+  display: block;
+  margin-left: 1.5rem;
 }
 .custom-checkbox label:before {
-  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: block;
+  content: "";
+  left: -1.5rem;
+  top: 0;
+  background: rgba(52, 58, 64, 0.2);
   color: white;
-  background: red;
-  padding: 5px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.custom-checkbox input {
+  display: none;
+}
+.custom-checkbox input:hover {
+  background: rgba(159, 170, 183, 0.6);
+}
+.custom-checkbox input:checked ~ label:before {
+  content: "✓";
+  background: #4285f4;
+  color: white;
+  padding: 0 5px;
+}
+.custom-checkbox input:checked ~ label:after {
+  background: #4285f4;
+}
+.custom-checkbox input.radio {
+  border-radius: 50%;
+}
+.custom-checkbox input:after {
+  border-radius: 50%;
 }
 
-.header {
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(251, 244, 244, 0.25);
+  border-radius: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #afafaf;
+}
+
+/*custom table style*/
+.content {
+  padding: 1rem;
+}
+.content .table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+.content .table td, .content .table th {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+.content .table tr:hover {
+  background-color: rgba(108, 117, 125, 0.04);
+}
+.content .table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+.content .table td.img {
+  max-width: 60px;
+}
+.content .table td.quantity {
+  text-align: center;
+}
+.content .table td.quantity input {
+  max-width: 70px;
+  text-align: center;
+}
+.content .cart-totals, .content .checkout-totals {
+  border: 6px solid #ebebeb;
+  padding: 1rem;
+}
+.content .cart-totals h2, .content .checkout-totals h2 {
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.5);
+  display: block;
+}
+.content .cart-totals table td.border-0, .content .checkout-totals table td.border-0 {
+  border: 0;
+}
+.content .cart-totals table td:nth-child(2), .content .checkout-totals table td:nth-child(2) {
+  text-align: right;
+}
+.content .checkout-details h2, .content .cart-totals h2, .content .checkout-totals h2 {
+  font-weight: 600;
+}
+
+/*style checkout-details  */
+#checkout input#login {
+  display: none;
+}
+#checkout input#login ~ .form-singin {
+  display: none;
+  transition: all 0.5s ease;
+}
+#checkout input#login ~ .form-biling .custom-checkbox {
+  display: block;
+}
+#checkout input#login:checked ~ .form-singin {
+  display: block;
+}
+#checkout input#login:checked ~ .form-biling .custom-checkbox {
+  display: none;
+}
+
+header.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1046,68 +761,68 @@ hr {
   background: #fcb800;
   padding: 0 2rem;
 }
-.header .logo {
+header.header .logo {
   max-width: 200px;
   width: 20%;
 }
-.header .logo img {
+header.header .logo img {
   width: 100%;
 }
-.header .content-search {
+header.header .content-search {
   width: 50%;
 }
-.header .content-search .form-search {
+header.header .content-search .form-search {
   display: flex;
   background: #fff;
   border-radius: 36px;
   overflow: hidden;
 }
-.header .content-search .form-search input, .header .content-search .form-search button, .header .content-search .form-search select {
+header.header .content-search .form-search input, header.header .content-search .form-search button, header.header .content-search .form-search select {
   background: transparent;
   border: 0px;
   border-radius: 0px;
   cursor: pointer;
   outline: none;
 }
-.header .content-search .form-search select {
+header.header .content-search .form-search select {
   width: auto;
   border-right: 0.5px solid rgba(108, 117, 125, 0.7);
   padding-right: 0.3rem;
 }
-.header .content-search .form-search input {
+header.header .content-search .form-search input {
   cursor: initial;
 }
-.header .content-search .form-search button {
+header.header .content-search .form-search button {
   padding: 0 1.5rem;
   background: #343a40;
   color: #fff;
 }
-.header .account {
+header.header .account {
   max-width: 40%;
 }
-.header .account ul {
+header.header .account ul {
   display: flex;
 }
-.header .account ul li {
+header.header .account ul li {
   margin: 0 0.6rem;
 }
-.header .account ul li a {
+header.header .account ul li a {
   color: #343a40;
 }
-.header .account ul li a i {
+header.header .account ul li a i {
   font-size: 1.8rem;
   transition: all 0.2s ease;
 }
-.header .account ul li a i:hover {
+header.header .account ul li a i:hover {
   color: #fff;
 }
-.header .account .menu {
+header.header .account .menu {
   display: none;
 }
-.header .account .menu ul {
+header.header .account .menu ul {
   display: none;
 }
-.header .account .search {
+header.header .account .search {
   display: none;
 }
 
@@ -1395,15 +1110,18 @@ hr {
   width: 100%;
 }
 .carousel .slide-container {
-  max-width: 1000px;
+  /*max-width: 1000px;*/
+  height: 70vh;
+  min-height: 50vh;
   position: relative;
 }
 .carousel .slide-container .slide {
   display: none;
   background: rgba(255, 255, 255, 0.4);
   z-index: 1;
-  min-height: 45vh;
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 .carousel .slide-container .slide img {
   width: 100%;
@@ -1417,7 +1135,7 @@ hr {
 }
 .carousel .slide-container .slide .body {
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 10%;
   width: 50%;
   z-index: 100;
@@ -1444,8 +1162,8 @@ hr {
 .carousel .slide-container .options {
   z-index: 1000;
   text-align: left;
-  left: 6rem;
-  bottom: 0.2rem;
+  left: 20%;
+  bottom: 5%;
   position: absolute;
 }
 .carousel .slide-container .options .dot {
@@ -1581,7 +1299,8 @@ hr {
   overflow: hidden;
   user-select: none;
   /*cursor: pointer;*/
-  /*background: $white;*/
+  background: #fff;
+  /*padding: .4rem;*/
   transition: all 0.5s ease;
 }
 .card.product:hover {
@@ -1644,8 +1363,8 @@ hr {
 }
 .card.product .description .content-price {
   display: flex;
-  justify-content: space-between;
-  width: 60%;
+  justify-content: center;
+  width: 80%;
   margin: 0 auto;
 }
 .card.product .description .content-price span {
@@ -1653,6 +1372,7 @@ hr {
   font-weight: 600;
 }
 .card.product .description .content-price span.price_old {
+  margin-left: 1rem;
   color: #ff4343;
   text-decoration: line-through;
 }
@@ -1660,10 +1380,14 @@ hr {
   display: -webkit-box;
   line-height: 1.5rem;
   margin: 0;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+.card.product .description p.large {
+  display: none;
 }
 .card.product .offer {
   position: absolute;
@@ -1698,6 +1422,9 @@ hr {
   max-height: 100%;
   display: grid;
   grid-template-columns: 50% auto;
+}
+.view-product .images, .view-product .description {
+  max-height: 100%;
 }
 .view-product .images {
   padding-right: 0;
@@ -1805,6 +1532,83 @@ hr {
   border-radius: 2px;
 }
 
+#content-header input {
+  display: none;
+}
+#content-header label {
+  color: rgba(52, 58, 64, 0.5);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+#content-header label.active {
+  color: #343a40;
+}
+
+.container-shop-products {
+  /*max-height: 80vh;
+  overflow-y: auto;*/
+}
+.container-shop-products.large {
+  transition: all 1s ease;
+}
+.container-shop-products.large > .col-sm-6, .container-shop-products.large > .col-md-6, .container-shop-products.large > .col-lg-4, .container-shop-products.large > .col-product {
+  flex-basis: 100% !important;
+}
+.container-shop-products.large > .col-sm-6 .card, .container-shop-products.large > .col-md-6 .card, .container-shop-products.large > .col-lg-4 .card, .container-shop-products.large > .col-product .card {
+  display: flex;
+  justify-content: space-between;
+  transition: all 1s ease;
+  animation: 0.5s width ease-in-out;
+  text-align: left;
+  padding: 1rem;
+}
+.container-shop-products.large > .col-sm-6 .card .image, .container-shop-products.large > .col-md-6 .card .image, .container-shop-products.large > .col-lg-4 .card .image, .container-shop-products.large > .col-product .card .image {
+  height: 100%;
+  width: 40%;
+  overflow: hidden;
+}
+.container-shop-products.large > .col-sm-6 .card .description, .container-shop-products.large > .col-md-6 .card .description, .container-shop-products.large > .col-lg-4 .card .description, .container-shop-products.large > .col-product .card .description {
+  width: 60%;
+  padding: 0.5rem;
+}
+.container-shop-products.large > .col-sm-6 .card .description p, .container-shop-products.large > .col-md-6 .card .description p, .container-shop-products.large > .col-lg-4 .card .description p, .container-shop-products.large > .col-product .card .description p {
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: left;
+  margin-bottom: 0.4rem;
+}
+.container-shop-products.large > .col-sm-6 .card .description p.large, .container-shop-products.large > .col-md-6 .card .description p.large, .container-shop-products.large > .col-lg-4 .card .description p.large, .container-shop-products.large > .col-product .card .description p.large {
+  display: block;
+  font-weight: 400;
+  font-size: 1rem;
+  display: -webkit-box;
+  line-height: 1.5rem;
+  margin-bottom: 0.8rem;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container-shop-products.large > .col-sm-6 .card .description .content-price, .container-shop-products.large > .col-md-6 .card .description .content-price, .container-shop-products.large > .col-lg-4 .card .description .content-price, .container-shop-products.large > .col-product .card .description .content-price {
+  justify-content: flex-start;
+  width: 100%;
+}
+.container-shop-products.large > .col-sm-6 .card .description .content-price span, .container-shop-products.large > .col-md-6 .card .description .content-price span, .container-shop-products.large > .col-lg-4 .card .description .content-price span, .container-shop-products.large > .col-product .card .description .content-price span {
+  font-size: 1.6rem;
+}
+.container-shop-products.large > .col-sm-6 .card .description .content-price span.price, .container-shop-products.large > .col-md-6 .card .description .content-price span.price, .container-shop-products.large > .col-lg-4 .card .description .content-price span.price, .container-shop-products.large > .col-product .card .description .content-price span.price {
+  margin-right: 0.5rem;
+}
+@keyframes width {
+  0% {
+    height: 0%;
+    /*width: 0%;*/
+  }
+  100% {
+    height: 100%;
+    /*width: 100%;*/
+  }
+}
 .container {
   width: 100%;
   padding-right: 15px;
@@ -2226,6 +2030,502 @@ hr {
 
   .col-xl-12 {
     flex-basis: 100%;
+  }
+}
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-none {
+  display: none;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-start {
+  justify-content: flex-start;
+}
+
+.align-items-end {
+  justify-content: flex-end;
+}
+
+/*spacing margin & padding */
+.p-0 {
+  padding: 0rem;
+}
+
+.pt-0, .py-0 {
+  padding-top: 0rem;
+}
+
+.pb-0, .py-0 {
+  padding-bottom: 0rem;
+}
+
+.pr-0, .px-0 {
+  padding-right: 0rem;
+}
+
+.pl-0, .px-0 {
+  padding-left: 0rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.pt-1, .py-1 {
+  padding-top: 0.25rem;
+}
+
+.pb-1, .py-1 {
+  padding-bottom: 0.25rem;
+}
+
+.pr-1, .px-1 {
+  padding-right: 0.25rem;
+}
+
+.pl-1, .px-1 {
+  padding-left: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.pt-2, .py-2 {
+  padding-top: 0.5rem;
+}
+
+.pb-2, .py-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pr-2, .px-2 {
+  padding-right: 0.5rem;
+}
+
+.pl-2, .px-2 {
+  padding-left: 0.5rem;
+}
+
+.p-3 {
+  padding: 1.8rem;
+}
+
+.pt-3, .py-3 {
+  padding-top: 1.8rem;
+}
+
+.pb-3, .py-3 {
+  padding-bottom: 1.8rem;
+}
+
+.pr-3, .px-3 {
+  padding-right: 1.8rem;
+}
+
+.pl-3, .px-3 {
+  padding-left: 1.8rem;
+}
+
+.p-4 {
+  padding: 2.4rem;
+}
+
+.pt-4, .py-4 {
+  padding-top: 2.4rem;
+}
+
+.pb-4, .py-4 {
+  padding-bottom: 2.4rem;
+}
+
+.pr-4, .px-4 {
+  padding-right: 2.4rem;
+}
+
+.pl-4, .px-4 {
+  padding-left: 2.4rem;
+}
+
+.p-5 {
+  padding: 3rem;
+}
+
+.pt-5, .py-5 {
+  padding-top: 3rem;
+}
+
+.pb-5, .py-5 {
+  padding-bottom: 3rem;
+}
+
+.pr-5, .px-5 {
+  padding-right: 3rem;
+}
+
+.pl-5, .px-5 {
+  padding-left: 3rem;
+}
+
+@media (min-width: 576px) {
+  .p-sm-1 {
+    padding: 0.6rem;
+  }
+
+  .pt-sm-1, .py-sm-1 {
+    padding-top: 0.6rem;
+  }
+
+  .pb-sm-1, .py-sm-1 {
+    padding-bottom: 0.6rem;
+  }
+
+  .pr-sm-1, .px-sm-1 {
+    padding-right: 0.6rem;
+  }
+
+  .pl-sm-1, .px-sm-1 {
+    padding-left: 0.6rem;
+  }
+
+  .p-sm-2 {
+    padding: 1.2rem;
+  }
+
+  .pt-sm-2, .py-sm-2 {
+    padding-top: 1.2rem;
+  }
+
+  .pb-sm-2, .py-sm-2 {
+    padding-bottom: 1.2rem;
+  }
+
+  .pr-sm-2, .px-sm-2 {
+    padding-right: 1.2rem;
+  }
+
+  .pl-sm-2, .px-sm-2 {
+    padding-left: 1.2rem;
+  }
+
+  .p-sm-3 {
+    padding: 1.8rem;
+  }
+
+  .pt-sm-3, .py-sm-3 {
+    padding-top: 1.8rem;
+  }
+
+  .pb-sm-3, .py-sm-3 {
+    padding-bottom: 1.8rem;
+  }
+
+  .pr-sm-3, .px-sm-3 {
+    padding-right: 1.8rem;
+  }
+
+  .pl-sm-3, .px-sm-3 {
+    padding-left: 1.8rem;
+  }
+
+  .p-sm-4 {
+    padding: 2.4rem;
+  }
+
+  .pt-sm-4, .py-sm-4 {
+    padding-top: 2.4rem;
+  }
+
+  .pb-sm-4, .py-sm-4 {
+    padding-bottom: 2.4rem;
+  }
+
+  .pr-sm-4, .px-sm-4 {
+    padding-right: 2.4rem;
+  }
+
+  .pl-sm-4, .px-sm-4 {
+    padding-left: 2.4rem;
+  }
+
+  .p-sm-5 {
+    padding: 3rem;
+  }
+
+  .pt-sm-5, .py-sm-5 {
+    padding-top: 3rem;
+  }
+
+  .pb-sm-5, .py-sm-5 {
+    padding-bottom: 3rem;
+  }
+
+  .pr-sm-5, .px-sm-5 {
+    padding-right: 3rem;
+  }
+
+  .pl-sm-5, .px-sm-5 {
+    padding-left: 3rem;
+  }
+}
+/*style margin*/
+.m-0 {
+  margin: 0rem;
+}
+
+.mt-0, .my-0 {
+  margin-top: 0rem;
+}
+
+.mb-0, .my-0 {
+  margin-bottom: 0rem;
+}
+
+.mr-0, .mx-0 {
+  margin-right: 0rem;
+}
+
+.ml-0, .mx-0 {
+  margin-left: 0rem;
+}
+
+.m-1 {
+  margin: 0.6rem;
+}
+
+.mt-1, .my-1 {
+  margin-top: 0.6rem;
+}
+
+.mb-1, .my-1 {
+  margin-bottom: 0.6rem;
+}
+
+.mr-1, .mx-1 {
+  margin-right: 0.6rem;
+}
+
+.ml-1, .mx-1 {
+  margin-left: 0.6rem;
+}
+
+.m-2 {
+  margin: 1.2rem;
+}
+
+.mt-2, .my-2 {
+  margin-top: 1.2rem;
+}
+
+.mb-2, .my-2 {
+  margin-bottom: 1.2rem;
+}
+
+.mr-2, .mx-2 {
+  margin-right: 1.2rem;
+}
+
+.ml-2, .mx-2 {
+  margin-left: 1.2rem;
+}
+
+.m-3 {
+  margin: 1.8rem;
+}
+
+.mt-3, .my-3 {
+  margin-top: 1.8rem;
+}
+
+.mb-3, .my-3 {
+  margin-bottom: 1.8rem;
+}
+
+.mr-3, .mx-3 {
+  margin-right: 1.8rem;
+}
+
+.ml-3, .mx-3 {
+  margin-left: 1.8rem;
+}
+
+.m-4 {
+  margin: 2.4rem;
+}
+
+.mt-4, .my-4 {
+  margin-top: 2.4rem;
+}
+
+.mb-4, .my-4 {
+  margin-bottom: 2.4rem;
+}
+
+.mr-4, .mx-4 {
+  margin-right: 2.4rem;
+}
+
+.ml-4, .mx-4 {
+  margin-left: 2.4rem;
+}
+
+.m-5 {
+  margin: 3rem;
+}
+
+.mt-5, .my-5 {
+  margin-top: 3rem;
+}
+
+.mb-5, .my-5 {
+  margin-bottom: 3rem;
+}
+
+.mr-5, .mx-5 {
+  margin-right: 3rem;
+}
+
+.ml-5, .mx-5 {
+  margin-left: 3rem;
+}
+
+@media (min-width: 576px) {
+  .m-sm-1 {
+    margin: 0.6rem;
+  }
+
+  .mt-sm-1, .my-sm-1 {
+    margin-top: 0.6rem;
+  }
+
+  .mb-sm-1, .my-sm-1 {
+    margin-bottom: 0.6rem;
+  }
+
+  .mr-sm-1, .mx-sm-1 {
+    margin-right: 0.6rem;
+  }
+
+  .ml-sm-1, .mx-sm-1 {
+    margin-left: 0.6rem;
+  }
+
+  .m-sm-2 {
+    margin: 1.2rem;
+  }
+
+  .mt-sm-2, .my-sm-2 {
+    margin-top: 1.2rem;
+  }
+
+  .mb-sm-2, .my-sm-2 {
+    margin-bottom: 1.2rem;
+  }
+
+  .mr-sm-2, .mx-sm-2 {
+    margin-right: 1.2rem;
+  }
+
+  .ml-sm-2, .mx-sm-2 {
+    margin-left: 1.2rem;
+  }
+
+  .m-sm-3 {
+    margin: 1.8rem;
+  }
+
+  .mt-sm-3, .my-sm-3 {
+    margin-top: 1.8rem;
+  }
+
+  .mb-sm-3, .my-sm-3 {
+    margin-bottom: 1.8rem;
+  }
+
+  .mr-sm-3, .mx-sm-3 {
+    margin-right: 1.8rem;
+  }
+
+  .ml-sm-3, .mx-sm-3 {
+    margin-left: 1.8rem;
+  }
+
+  .m-sm-4 {
+    margin: 2.4rem;
+  }
+
+  .mt-sm-4, .my-sm-4 {
+    margin-top: 2.4rem;
+  }
+
+  .mb-sm-4, .my-sm-4 {
+    margin-bottom: 2.4rem;
+  }
+
+  .mr-sm-4, .mx-sm-4 {
+    margin-right: 2.4rem;
+  }
+
+  .ml-sm-4, .mx-sm-4 {
+    margin-left: 2.4rem;
+  }
+
+  .m-sm-5 {
+    margin: 3rem;
+  }
+
+  .mt-sm-5, .my-sm-5 {
+    margin-top: 3rem;
+  }
+
+  .mb-sm-5, .my-sm-5 {
+    margin-bottom: 3rem;
+  }
+
+  .mr-sm-5, .mx-sm-5 {
+    margin-right: 3rem;
+  }
+
+  .ml-sm-5, .mx-sm-5 {
+    margin-left: 3rem;
   }
 }
 
