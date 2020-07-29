@@ -20,15 +20,23 @@ function display_navbar()
 {
     include 'navbar.php';
 }
-function display_newproducts()
+function display_new_products()
 {
-    include 'newProducts.php';
+    include 'new-products.php';
 }
 function diplay_shop_products()
 {
 	include 'shop-products.php';
 }
-function display_productDetail()
+function display_detail_products()
 {
-    include 'productDetail.php';
+    include 'detail-products.php';
+}
+function display_brand_products()
+{
+	include 'brand-products.php';
+}
+function display_footer()
+{
+    include 'footer.php';
 }

@@ -1,21 +1,17 @@
+<?php
+
+$search = (isset($_SESSION['search'])) ? str_replace('-', ' ', $_SESSION['search']) : '';
+?>
 <header class="header">
 	<div class="logo">
-		<a href="./">
+		<a href="<?=BASE_URL?>">
 			<img src="http://demo2.drfuri.com/martfury3/wp-content/uploads/sites/38/2018/01/logo_light.png" alt="">
 		</a>
 	</div>
 	<div class="content-search">
 		<form class="form-search">
-			<select class="select">
-				<option value="0"> all </option>
-				<option value="1"> Sport </option>
-				<option value="2"> elegant </option>
-				<option value="3"> clothing </option>
-			</select>
-			<input type="text" class="input" placeholder="search for products">
-			<button type="button">
-				<i class="fas fa-search"></i>
-			</button>
+			<input type="text" class="input " placeholder="Escribe para buscar" required value="<?=$search?>">
+			<button type="submit"><i class="fas fa-search"></i></button>
 		</form>
 	</div>
 	<div class="account">
@@ -25,9 +21,10 @@
 					<i class="far fa-heart"></i>
 				</a>
 			</li>
-			<li>
-				<a href="<?=URL_BASE?>cart">
+			<li class="item-cart">
+				<a href="<?=BASE_URL?>cart">
 					<i class="fas fa-shopping-bag"></i>
+					<span class="quantity-cart">0</span>
 				</a>
 			</li>
 			<li>
@@ -46,10 +43,8 @@
 			<!-- form search -->
 			<div class="search">
 				<form class="form-search">
-					<input type="text" class="input" placeholder="search for products">
-					<button type="button">
-						<i class="fas fa-search"></i>
-					</button>
+					<input type="text" name="search" class="input" placeholder="Escribe para buscar" required value="<?=$search?>">
+					<button type="submit"> <i class="fas fa-search"></i> </button>
 				</form>
 				<label for="search" class="close"> <i class="fas fa-times"></i> </label>
 			</div>
@@ -59,7 +54,7 @@
 			<ul>
 				<li> <a href="#"> Inicio </a> </li>
 				<li> <a href="#"> tienda </a> </li>
-				<li> <a href="#"> Contacto </a> </li>		
+				<li> <a href="#"> Contacto </a> </li>
 			</ul>
 		</div>
 	</div>

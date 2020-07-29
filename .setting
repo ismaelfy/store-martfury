@@ -1,0 +1,23 @@
+#--------------------------------------------------------------------
+# APP
+#--------------------------------------------------------------------
+
+app.base_url = http://store.test/
+app.name = CHIRY - SOTRE
+
+# confing email  ( smtp mail )
+app.username = Ismael
+app.email = ismael.fernandez@nssperu.com
+app.password = Rayson-12
+
+# shipping is integer
+app.shipping = 10
+app.igv = 18
+
+#--------------------------------------------------------------------
+# DATABASE
+#--------------------------------------------------------------------
+db.hostname = localhost
+db.database = db_store
+db.username = root
+db.password = 

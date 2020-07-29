@@ -1,6 +1,6 @@
 @import 'colors';
+$size_header :12vh;
 
-$size_header :14vh;
 header.header {
     display: flex;
     justify-content: space-between;
@@ -29,6 +29,7 @@ header.header {
                 border-radius: 0px;
                 cursor: pointer;
                 outline: none;
+                padding-left: 1.2rem;
             }
             select {
                 width: auto;
@@ -42,6 +43,7 @@ header.header {
                 padding: 0 1.5rem;
                 background: $dark;
                 color: $white;
+                line-height: 1.5rem;
             }
         }
     }
@@ -51,14 +53,33 @@ header.header {
             display: flex;
             li {
                 margin: 0 .6rem;
+                position: relative;
                 a {
-                    color: $dark;
+                    color: $white;
                     i {
                         font-size: 1.8rem;
                         transition: all .2s ease;
                         &:hover {
-                            color: $white;
+                            color: rgba($white, 0.6);
                         }
+                    }
+                    span {
+                        background: $dark;
+                        color: white;
+                        text-indent: 0;
+                        float: left;
+                        position: absolute;
+                        top: 9px;
+                        left: 9px;
+                        font-size: 10px;
+                        color: #fff;
+                        padding: 2px 0;
+                        border-radius: 50%;
+                        background-color: #333e48;
+                        width: 20px;
+                        height: 20px;
+                        text-align: center;
+                        font-weight: 600;
                     }
                 }
             }
@@ -80,14 +101,15 @@ header.header {
     $size_header: 10vh;
     .header {
         position: relative;
-        height: $size_header;
+        height: $size_header!important;
+        padding: 0 1rem!important;
         .logo {
             width: 30%;
         }
         .account {
-            display: flex;            
+            display: flex;
             height: 5vh;
-            max-width: 60%;
+            max-width: 60%!important;
         }
         .content-search {
             display: none;
@@ -118,14 +140,15 @@ header.header {
                         }
                     }
                     &~ul {
-                        display: block;
+                        display: block!important;
                         position: absolute;
                         width: 100%;
                         padding: 1em;
                         left: 0;
                         top: $size_header;
                         height: calc(100vh - #{$size_header});
-                        background: linear-gradient(to bottom, $dark 0%, transparent 80%);
+                        background: linear-gradient(to bottom, $dark 0%, transparent 100%);
+                        z-index: 2000;
                         li {
                             transition: all .5s ease;
                             line-height: 1.5rem;
@@ -135,6 +158,7 @@ header.header {
                             a {
                                 display: block;
                                 text-decoration: none;
+                                color: $dark;
                                 &:hover {
                                     font-weight: 600;
                                     transition: all .5s ease;
@@ -143,11 +167,11 @@ header.header {
                             }
                             &:first-of-type {
                                 padding-top: 2em;
-                                border-radius: .3em .3em 0 0;
+                                /*border-radius: .3em .3em 0 0;*/
                             }
                             &:last-of-type {
                                 padding-bottom: 2em;
-                                border-radius: 0 0 .3em .3em;
+                                /*border-radius: 0 0 .3em .3em;*/
                             }
                         }
                     }
@@ -194,7 +218,7 @@ header.header {
                     top: 0;
                     height: 100vh;
                     background: linear-gradient(to bottom, $dark 0%, transparent 80%);
-                    z-index: 500;
+                    z-index: 2000;
                     transition: all .5s ease;
                     .close {
                         color: white;
@@ -236,16 +260,15 @@ header.header {
         }
     }
 }
-
 @media screen and(max-width: $size-sm) {
-	.header {
-		padding: 0 .5rem;
-	}
+    .header {
+        padding: 0 .5rem;
+    }
     .account {
         display: flex;
         align-items: center;
         height: 5vh;
-        max-width: 80%;
+        max-width: 80%!important;
         ul li {
             margin: 0 .3rem;
             a i {
@@ -255,11 +278,17 @@ header.header {
                     color: $white;
                 }
             }
+            &.item-cart {
+                display: none;
+            }
         }
         .menu {
-        	i {
-        		font-size: 1.2rem!important;
-        	}
+            .search__button {
+                display: none;
+            }
+            i {
+                font-size: 1.2rem!important;
+            }
         }
     }
 }

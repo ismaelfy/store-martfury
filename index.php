@@ -1,28 +1,35 @@
 <?php
-require 'constants.php';
-if (isset($_GET['name'])) {
-    $name = explode('/', $_GET['name']);
-    switch (strtolower($name[0])) {
-        case 'shop':
-            include 'shop.php';
-            break;
-        case 'cart':
-            include 'cart.php';
-            break;
-        case 'checkout':
-            include 'checkout.php';
-            break;
-        case 'contact':
-            include 'contact.php';
-            break;
-        case 'api':
-            $_GET['action'] = isset($name[1]) ? $name[1] : '';
-            include 'App.php';
-            break;
-        default:
-            echo "error the page";
-            break;
-    }
+session_start();
+require 'vendor/autoload.php';
+require './config/constants.php';
+require './config/functions.php';
+require './include/functions.php';
+$path = __dir__ . './views/';
+
+$files = array_diff(scandir($path), array('.', '..'));
+$page = "home.php";
+if (isset($_GET['name']) && !empty($_GET['name'])) {
+    $params = explode('/', $_GET['name']);
+    $page = strtolower(str_replace(['.php', '.html'], '', $params[0])) . ".php";
+}
+
+if (in_array($page, $files)) {
+    $index = array_search($page, $files);
+    include $path . $files[$index];
 } else {
-    include 'home.php';
+    if ($page === 'api.php') {
+        unset($params[0]);
+        if (isset($params[1]) && !empty($params[1]))
+            $_GET['name'] = $params[1];
+
+        if (isset($params[2]) && !empty($params[2]))
+            $_GET['action'] = $params[2];
+
+        if (isset($params[3]) && !empty($params[3]))
+            $_GET['value'] = $params[3];
+
+        include  "./utils/api.php";
+    } else {
+        include "404.php";
+    }
 }

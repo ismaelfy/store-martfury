@@ -1,0 +1,42 @@
+footer {
+    background: rgba($dark, 0.9);
+    color: rgba($light, 0.5);
+    a {
+        color: rgba($light, 0.8);
+        &:hover {
+            color: white;
+        }
+    }
+    p {
+        margin: 0;
+    }
+    ul {
+        margin: 0;
+        li {
+            line-height: 2rem;
+        }
+    }
+    .title>h3 {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 2px;
+        &:before {
+            
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80%;
+            height: .5px;
+            background: rgba(white, 0.3);
+        }
+    }
+    .dark {
+        background: $dark;
+        padding: 1.5rem 0;
+        a {
+            color: $light;
+        }
+    }
+}

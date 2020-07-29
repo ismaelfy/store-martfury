@@ -76,8 +76,7 @@
                                     Leather
                                     <br>
                                         Bags
-                                    </br>
-                                </br>
+                                   
                             </span>
                             <span class="uppercase offer">
                                 20% off
@@ -93,11 +92,9 @@
                             <span>
                                 Unio
                                 <br>
-                                    Leather
-                                    <br>
-                                        Bags
-                                    </br>
-                                </br>
+                                Leather
+                                <br>
+                                Bags
                             </span>
                             <span class="uppercase offer">
                                 20% off
@@ -105,6 +102,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

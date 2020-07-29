@@ -133,9 +133,8 @@ $columns :12;
 
 $spacin :0.25rem;
 $spacinSize:5;
-
 @for $i from 0 through $spacinSize {
-    @if $i>=3 {
+    @if $i>3 {
         $spacin: 0.6rem;
     }
     .p-#{$i} {
@@ -209,5 +208,10 @@ $spacinSize:5;
         .ml-sm-#{$i}, .mx-sm-#{$i} {
             margin-left: $spacin * $i;
         }
+    }
+}
+@for $i from 1 through 20 {
+    .h-#{$i*5} {
+        height: #{$i*5}vh;
     }
 }

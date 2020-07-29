@@ -18,6 +18,7 @@
                         </a>
                     </div>
                 </img>
+                
             </div>
             <div class="slide fade">
                 <img src="http://demo2.drfuri.com/martfury3/wp-content/uploads/sites/38/revslider/home_full_width/s3-2.jpg">

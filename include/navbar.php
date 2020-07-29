@@ -1,9 +1,23 @@
 <nav class="navbar">
-	<ul>
-		<li> <a href="<?=URL_BASE?>"> Inicio </a> </li>
-		<li> <a href="<?=URL_BASE?>shop/"> tienda </a> </li>
-		<li> <a href="<?=URL_BASE?>contact/"> Contacto </a> </li>
-	</ul>
+		<?php if (!isset($_POST['cat-nav'])): ?>
+		<div class="container">
+			<ul id="category-list">
+				<li>
+					<i class="fas fa-th-list"></i> <span> Categories </span>
+				</li>
+				<div class="list-container">
+					<ul></ul>
+				</div>
+			</ul>
+		<?php else: ?>
+		<div class="container center">
+		 <?php endif?>
+		<ul>
+			<li> <a href="<?=BASE_URL?>"> Inicio </a> </li>
+			<li> <a href="<?=BASE_URL?>shop/"> tienda </a> </li>
+			<li> <a href="<?=BASE_URL?>contact/"> Contacto </a> </li>
+		</ul>
+	</div>
 	<!-- <div class="search">
 		<form class="form">
 			<input type="text" class="input" placeholder="search for products">
@@ -17,27 +31,32 @@
 <div class="bottom-nav">
 	<ul>
 		<li>
-			<a href="<?=URL_BASE?>">
+			<a href="<?=BASE_URL?>">
 				<span class="material-icons"> home </span>
-			 	Home 
+			 	Inicio
 			</a>
 		</li>
 		<li>
 			<a href="#">
 				<span class="material-icons"> menu </span>
-			 	Category 
+			 	Categorias
 			</a>
+			<div class="content-category">
+				<div id="container-categories-nav" class="mt-1"></div>
+			</div>
 		</li>
 		<li>
 			<a href="#">
+				<label for="search">
 				<span class="material-icons"> search </span>
-			 	Search 
+			 	Buscar
+			 	</label>
 			</a>
 		</li>
 		<li>
 			<a href="#">
 				<span class="material-icons">local_mall</span>
-				Cart 
+				Carrito
 			</a>
 		</li>
 	</ul>

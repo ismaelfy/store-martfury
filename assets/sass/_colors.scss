@@ -2,7 +2,7 @@ $primary: #4285f4;
 $success: #20c997;
 $warning: #fcb800;
 $blue: #4b7bec;
-$danger: #ff818d;
+$danger: #fb5464;
 $secondary: #6c757d;
 $dark: #343a40;
 $grey: #6c757d;
@@ -16,3 +16,4 @@ $size-md: 767.98px;
 //@each $name, $color in $colors {
 //    $name:$color;
 //}
+$baseColor : $warning;
