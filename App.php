@@ -29,20 +29,20 @@ if (isset($_GET) || $_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($name == 'products') {
         $Product = new Products();
         switch ($action) {
-            case 'new':{
+            case 'new': {
                     $res = $Product->getNew();
                     sendData($res);
                 }
-            case 'brand':{
+            case 'brand': {
                     $res = $Product->getBrand();
                     sendData($res);
                 }
-            case 'get':{
+            case 'get': {
                     $id  = isset($_GET['value']) ? preg_replace('([^0-9])', '', $_GET['value']) : '';
                     $res = $Product->getProduct($id);
                     sendData($res);
                 }
-            case 'filter':{
+            case 'filter': {
                     $datos    = json_decode(trim(file_get_contents('php://input'), true));
                     $category = "";
                     $brand    = "";
@@ -63,7 +63,7 @@ if (isset($_GET) || $_SERVER['REQUEST_METHOD'] == 'POST') {
                     //$res = $Product->find_all($category, $brand, '');
                     sendData(null, true);
                 }
-            default:{
+            default: {
                     $res        = "";
                     $categories = (isset($_SESSION['category'])) ? $_SESSION['category'] : '';
                     $brands     = (isset($_SESSION['brand'])) ? $_SESSION['brand'] : '';
@@ -87,7 +87,6 @@ if (isset($_GET) || $_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($action === 'get') {
 
     }*/
-
     }
     // cart
     if ($name === 'cart') {
@@ -308,7 +307,6 @@ function get_List_cart()
         'summary' => $summary,
     ];
     return $datos;
-
 }
 function add_cart($item)
 {

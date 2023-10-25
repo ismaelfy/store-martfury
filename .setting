@@ -2,7 +2,7 @@
 # APP
 #--------------------------------------------------------------------
 
-app.base_url = http://store.test/
+app.base_url = http://store-martfury.test/
 app.name = CHIRY - SOTRE
 
 # confing email  ( smtp mail )

@@ -29,6 +29,7 @@ if (file_exists($path)) {
     }
 }
 
+
 define('BASE_URL', $app->base_url);
 define('APP_NAME', $app->name);
 define('IGV', $app->igv);

@@ -1,9 +1,9 @@
 <?php
 session_start();
-require 'vendor/autoload.php';
-require './config/constants.php';
-require './config/functions.php';
-require './include/functions.php';
+include 'vendor/autoload.php';
+include './config/constants.php';
+include './config/functions.php';
+include './include/functions.php';
 $path = __dir__ . './views/';
 
 $files = array_diff(scandir($path), array('.', '..'));
